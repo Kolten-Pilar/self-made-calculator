@@ -5,6 +5,12 @@ let calculation = localStorage.getItem('calculation') || '';
       
 
       function updateCalculation (value) {
+        const button = document.getElementById('buttons');
+
+        button.addEventListener('click', ()=> {
+          updateCalculation('');
+        })
+        
         calculation += value;
         console.log(calculation);
         displayCalculation();
@@ -14,7 +20,7 @@ let calculation = localStorage.getItem('calculation') || '';
 
 
       function displayCalculation() {
-        document.querySelector('.showCalculation').innerHTML = calculation;
+        document.getElementById('showCalculation').innerHTML = calculation;
       }
 
       function equalsCalculation() {
@@ -26,8 +32,4 @@ let calculation = localStorage.getItem('calculation') || '';
       }
 
 
-  const button = document.getElementById('buttons');
-
-  button.addEventListener('click', ()=> {
-    updateCalculation('');
-  })
+  
